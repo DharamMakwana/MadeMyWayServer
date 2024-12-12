@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  vpn:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - /app/node_modules
+      - ./src:/app/src
+    environment:
+      - PORT=5000
+      - NODE_ENV=prod
+      - DB_URL=mongodb+srv://parnetwork03:FDpTIkjSws24neHg@genxi.tiaymzj.mongodb.net/rabbitvpn
+      - JWT_SECRET=OKOIjkdmfekr83495rijfdkfls'OFRKEOFKml,drbhfjgeryi
+      - PASS_KEY=UWIEJKSDMkjg894utimfFDPGIKREOFGThdsgfRUhrsdyrt
+      - AES_KEY=NJADBuy783rhfjsdnfDGKJRTFIKMGBr9fhdyuifgdefsd
+      - ADMIN_AES_KEY=fj98YDUhjnhJHFRU*t;lgL50-ygtf;,gbsdjhfgsdefbsd
+      - BACKEND_URL=http://103.116.176.223:3201
+      - AWS_ACCESS_KEY_DO=NMCX6WOAVGTQWOI4G5FI
+      - AWS_SECRET_KEY_DO=++RI8VTlCgn9rTocYipS/mmsC8vVq/S+2XhbPvja3ck
+      - AWS_REGION=sgp1
+      - S3_END_POINT=https://sgp1.digitaloceanspaces.com
+      - AWS_BUCKET_NAME=rabbitvpn
+      - BASE_URL=https:/rabbitvpn.sgp1.digitaloceanspaces.com
+      - IOS=https://sandbox.itunes.apple.com/verifyReceipt
+      - IOS_PASSWORD=d0a166fb89c140808f2106ce38742c09
+      - ANDROID=https://www.googleapis.com/auth/androidpublisher
+      - PACKAGE_NAME=connectvpn.fast.secure.freevpn.unblockwebsites
+      - APPLE_ISSUER_ID=d6f0faf5-27ae-4cdd-a703-59ada099aaf9
+      - APPLE_KEY_ID=N9RCWQ59BD
